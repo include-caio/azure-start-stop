@@ -1,0 +1,1 @@
+Invoke-RestMethod -Uri "https://management.azure.com$(Read-Host -Prompt "Resource ID")/$((Read-Host -Prompt "Action").ToLower())?api-version=$(Read-Host -Prompt "API version")" -Method Post -Headers @{"Content-Type" = "application/json"; "Authorization" = "Bearer " + (Get-AzAccessToken).Token};
